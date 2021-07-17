@@ -1,1 +1,1 @@
-class=solutions.elevation.camel.component.openhtmltopdf.OpenHtmlToPdfComponent
+class=solutions.elevation.camel.openhtmltopdf.OpenHtmlToPdfComponent

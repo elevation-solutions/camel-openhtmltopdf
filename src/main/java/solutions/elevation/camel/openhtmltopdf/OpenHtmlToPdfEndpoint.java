@@ -1,4 +1,4 @@
-package solutions.elevation.camel.component.openhtmltopdf;
+package solutions.elevation.camel.openhtmltopdf;
 
 import java.util.concurrent.ExecutorService;
 
@@ -7,10 +7,11 @@ import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
 import org.apache.camel.Producer;
 import org.apache.camel.spi.UriEndpoint;
+import org.apache.camel.spi.UriParam;
 import org.apache.camel.support.DefaultEndpoint;
 
 /**
- * Create PDF documents from HTML+CSS content
+ * Create PDF documents from HTML content
  */
 @UriEndpoint(firstVersion = "3.10.0", scheme = "openhtmltopdf", title = "OpenHtmlToPdf",
     syntax="openhtmltopdf:operation", producerOnly = true,
@@ -21,6 +22,7 @@ import org.apache.camel.support.DefaultEndpoint;
     })
 public class OpenHtmlToPdfEndpoint extends DefaultEndpoint {
 
+    @UriParam
     private final OpenHtmlToPdfConfiguration configuration;
 
     public OpenHtmlToPdfEndpoint(String uri, OpenHtmlToPdfComponent component,
@@ -37,6 +39,10 @@ public class OpenHtmlToPdfEndpoint extends DefaultEndpoint {
     @Override
     public Consumer createConsumer(Processor processor) throws Exception {
         throw new UnsupportedOperationException("This component does not support consuming.");
+    }
+
+    public OpenHtmlToPdfConfiguration getConfiguration() {
+        return configuration;
     }
 
     public ExecutorService createExecutor() {

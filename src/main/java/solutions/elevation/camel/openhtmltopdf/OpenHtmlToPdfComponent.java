@@ -1,4 +1,4 @@
-package solutions.elevation.camel.component.openhtmltopdf;
+package solutions.elevation.camel.openhtmltopdf;
 
 import java.util.Map;
 

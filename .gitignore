@@ -26,3 +26,4 @@ components/camel-cxf/activemq-data
 .java-version
 node_modules/
 src/generated
+test-output
