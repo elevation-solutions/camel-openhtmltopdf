@@ -3,12 +3,43 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>solutions.elevation.camel.component</groupId>
+  <groupId>solutions.elevation.camel</groupId>
   <artifactId>camel-openhtmltopdf</artifactId>
   <packaging>jar</packaging>
   <version>1.0.1</version>
 
   <name>OpenHtmlToPdf Component for Apache Camel</name>
+  <description>This component currently supports generating PDF files from HTML, CSS and images.</description>
+  <url>https://github.com/elevation-solutions/camel-openhtmltopdf</url>
+  
+  <organization>
+    <name>Elevation Solutions</name>
+    <url>https://elevation.solutions</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>jross</id>
+      <name>Jeremy Ross</name>
+      <url>https://github.com/jeremyross</url>
+      <organization>Elevation Solutions</organization>
+      <organizationUrl>https://elevation.solutions</organizationUrl>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:git://github.com/elevation-solutions/camel-openhtmltopdf.git</connection>
+    <developerConnection>scm:git:ssh://github.com:elevation-solutions/camel-openhtmltopdf.git</developerConnection>
+    <url>https://github.com/elevation-solutions/camel-openhtmltopdf</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -138,6 +169,30 @@
                 </resource>
               </resources>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>

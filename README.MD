@@ -11,12 +11,12 @@ image and SVG generation.
 Maven users will need to add the following dependency to their pom.xml for this component.
 
     <dependency>
-        <groupId>solutions.elevation.camel.component</groupId>
+        <groupId>solutions.elevation.camel</groupId>
         <artifactId>camel-openhtmltopdf</artifactId>
-        <version>1.0</version>
+        <version>1.0.1</version>
     </dependency>
                     
-The latest release uses camel-core version 3.9.0 as dependency.
+The latest release uses camel-core version 3.11.0 as dependency.
 
 ## URI format
 
