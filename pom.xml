@@ -6,7 +6,7 @@
   <groupId>solutions.elevation.camel</groupId>
   <artifactId>camel-openhtmltopdf</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>OpenHtmlToPdf Component for Apache Camel</name>
   <description>This component currently supports generating PDF files from HTML, CSS and images.</description>
