@@ -33,7 +33,7 @@ Only Producer is suppored.
 | pageSizeUnits | Default page units to use if not specified in CSS. INCHES, MM | INCHES |
 | defaultTextDirection| Default text direction to use if not specified in CSS | LTR |
 | testMode | Whether to use test mode and output the PDF uncompressed | false |
-| leniantParsing | Use leniant parsing for documents that don't comply with strict XHTML syntax. | true |
+| lenientParsing | Use leniant parsing for documents that don't comply with strict XHTML syntax. | true |
 
 ## Operations
 
