@@ -49,7 +49,7 @@ public class OpenHtmlToPdfProducer extends DefaultProducer {
                 if (baseUri == null) {
                     baseUri = determineBaseUri(stringBody);
                 }
-                if (configuration.isLeniantParsing()) {
+                if (configuration.isLenientParsing()) {
                     if (url.getProtocol().equalsIgnoreCase("file")) {
                         org.jsoup.nodes.Document document = Jsoup.parse(new File(url.getPath()),
                                 "UTF-8", baseUri);
@@ -65,7 +65,7 @@ public class OpenHtmlToPdfProducer extends DefaultProducer {
                 }
             }
             else { // assume body is HTML content
-                if (configuration.isLeniantParsing()) {
+                if (configuration.isLenientParsing()) {
                     org.jsoup.nodes.Document document = Jsoup.parse(stringBody, baseUri);
                     builder.withW3cDocument(W3CDom.convert(document), baseUri);
                 }

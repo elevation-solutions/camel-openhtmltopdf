@@ -33,9 +33,9 @@ public class OpenHtmlToPdfConfiguration {
             defaultValue = "false")
     private boolean testMode;
 
-    @UriParam(description = "Use leniant parsing for documents that don't comply with strict syntax.",
+    @UriParam(description = "Use lenient parsing for documents that don't comply with strict syntax.",
             defaultValue = "true")
-    private boolean leniantParsing = true;
+    private boolean lenientParsing = true;
 
     public void setOperation(String name) {
         this.operation = OpenHtmlToPdfOperation.valueOf(name);
@@ -85,11 +85,11 @@ public class OpenHtmlToPdfConfiguration {
         this.pageSizeUnits = pageSizeUnits;
     }
 
-    public boolean isLeniantParsing() {
-        return leniantParsing;
+    public boolean isLenientParsing() {
+        return lenientParsing;
     }
 
-    public void setLeniantParsing(boolean leniantParsing) {
-        this.leniantParsing = leniantParsing;
+    public void setLenientParsing(boolean lenientParsing) {
+        this.lenientParsing = lenientParsing;
     }
 }

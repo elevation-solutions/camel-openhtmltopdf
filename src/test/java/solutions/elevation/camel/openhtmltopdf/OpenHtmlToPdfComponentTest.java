@@ -24,17 +24,17 @@ public class OpenHtmlToPdfComponentTest extends CamelTestSupport {
     }
 
     @Test
-    public void leniantNoTrailingSlash() throws Exception {
+    public void lenientNoTrailingSlash() throws Exception {
         String html = "https://news.ycombinator.com";
-        template.sendBody("direct:leniant", html);
+        template.sendBody("direct:lenient", html);
         File testOutput = new File("test-output/thepdf.pdf");
         assertTrue(testOutput.exists());
     }
 
     @Test
-    public void leniantTrailingSlash() throws Exception {
+    public void lenientTrailingSlash() throws Exception {
         String html = "https://news.ycombinator.com/";
-        template.sendBody("direct:leniant", html);
+        template.sendBody("direct:lenient", html);
         File testOutput = new File("test-output/thepdf.pdf");
         assertTrue(testOutput.exists());
     }
@@ -68,17 +68,17 @@ public class OpenHtmlToPdfComponentTest extends CamelTestSupport {
     }
 
     @Test
-    public void stringInputLeniant() {
-        template.sendBodyAndHeader("direct:leniant", "<html><body>test</body></html>",
+    public void stringInputlenient() {
+        template.sendBodyAndHeader("direct:lenient", "<html><body>test</body></html>",
                 OpenHtmlToPdfProducer.BASE_URI_HEADER, "https://news.ycombinator.com");
         File testOutput = new File("test-output/thepdf.pdf");
         assertTrue(testOutput.exists());
     }
 
     @Test
-    public void leniantBaseUri() throws Exception {
+    public void lenientBaseUri() throws Exception {
         String html = "https://news.ycombinator.com";
-        template.sendBodyAndHeader("direct:leniant", html,
+        template.sendBodyAndHeader("direct:lenient", html,
                 OpenHtmlToPdfProducer.BASE_URI_HEADER, "https://news.ycombinator.com");
         File testOutput = new File("test-output/thepdf.pdf");
         assertTrue(testOutput.exists());
@@ -89,12 +89,12 @@ public class OpenHtmlToPdfComponentTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() throws Exception {
         return new RouteBuilder() {
             public void configure() {
-                from("direct:leniant")
+                from("direct:lenient")
                     .to("openhtmltopdf:pdf")
                     .to("file:test-output?fileName=thepdf.pdf");
 
                 from("direct:strict")
-                    .to("openhtmltopdf:pdf?leniantParsing=false")
+                    .to("openhtmltopdf:pdf?lenientParsing=false")
                     .to("file:test-output?fileName=thepdf.pdf");
             }
         };
